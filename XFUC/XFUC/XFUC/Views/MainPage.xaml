@@ -7,7 +7,10 @@
              
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFUC.Views.MainPage"
-             Title="MainPage">
+             Title="MainPage"
+             
+             x:Name="ThisPage"
+             >
     <Grid
         RowSpacing="0" ColumnSpacing="0"
         Margin="10,20"
@@ -25,11 +28,15 @@
             Grid.Column="0" Grid.Row="1"
             ButtonBackgroundColor="#90db94"
             HorizontalOptions="Fill" VerticalOptions="Fill"
-            BindingContext="{Binding LeftButtonVM}"/>
+            BindingContext="{Binding LeftButtonVM}"
+            ButtonContent="左邊的按鈕">
+        </userControls:MyButtonProp>
         <userControls:MyButtonProp
             Grid.Column="1" Grid.Row="1"
             ButtonBackgroundColor="#cc8695"
             HorizontalOptions="Fill" VerticalOptions="Fill"
-            BindingContext="{Binding RightButtonVM}"/>
+            BindingContext="{Binding RightButtonVM}"
+            ButtonContent="右邊的按鈕">
+        </userControls:MyButtonProp>
     </Grid>
 </ContentPage>

@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XFUC.UserControls.MyButtonProp">
+             x:Class="XFUC.UserControls.MyButtonProp"
+             x:Name="ThisView">
 
     <Grid
         RowSpacing="0" ColumnSpacing="0"
@@ -21,21 +22,53 @@
             Grid.RowSpan="2"
             Grid.ColumnSpan="2"/>
 
+        <BoxView
+            Color="Transparent"
+            Grid.Row="0" Grid.Column="0"
+            Grid.ColumnSpan="2">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding TopTapCommand}"
+                    CommandParameter="{Binding CurrentContent, Source={x:Reference ThisView}}"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
         <Label
             Grid.Row="0" Grid.Column="0"
             Grid.ColumnSpan="2"
             Text="{Binding TopText}"
             TextColor="Black"
             FontSize="16"
-            HorizontalOptions="Center" VerticalOptions="Center"/>
+            HorizontalOptions="Center" VerticalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding TopTapCommand}"
+                    CommandParameter="{Binding CurrentContent, Source={x:Reference ThisView}}"/>
+            </Label.GestureRecognizers>
+        </Label>
 
+        <BoxView
+            Color="Transparent"
+            Grid.Row="1" Grid.Column="0"
+            >
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding LeftTapCommand}"
+                    CommandParameter="{Binding CurrentContent, Source={x:Reference ThisView}}"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
         <Label
             Grid.Row="1" Grid.Column="0"
             Text="{Binding LeftText}"
             TextColor="{Binding LeftTextColor}"
             FontSize="12"
             HorizontalOptions="Center" VerticalOptions="Start"
-            Margin="0,5,0,0"/>
+            Margin="0,5,0,0">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding LeftTapCommand}"
+                    CommandParameter="{Binding CurrentContent, Source={x:Reference ThisView}}"/>
+            </Label.GestureRecognizers>
+        </Label>
         <Image
             Grid.Row="1" Grid.Column="0"
             Source="Facebook.png"
@@ -43,8 +76,24 @@
             HeightRequest="20"
             Aspect="Fill"
             HorizontalOptions="Center" VerticalOptions="End"
-            Margin="0,0,0,5"/>
+            Margin="0,0,0,5">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding LeftTapCommand}"
+                    CommandParameter="{Binding CurrentContent, Source={x:Reference ThisView}}"/>
+            </Image.GestureRecognizers>
+        </Image>
 
+        <BoxView
+            Color="Transparent"
+            Grid.Row="1" Grid.Column="1"
+            >
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding RightTapCommand}"
+                    CommandParameter="{Binding CurrentContent, Source={x:Reference ThisView}}"/>
+            </BoxView.GestureRecognizers>
+        </BoxView>
         <StackLayout
             Grid.Row="1" Grid.Column="1"
             Orientation="Vertical"
@@ -54,13 +103,25 @@
                 TextColor="{Binding RightText1Color}"
                 FontSize="{Binding RightText1Size}"
                 HorizontalOptions="Start" VerticalOptions="Start"
-                Margin="5,5,0,0"/>
+                Margin="5,5,0,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding RightTapCommand}"
+                        CommandParameter="{Binding CurrentContent, Source={x:Reference ThisView}}"/>
+                </Label.GestureRecognizers>
+            </Label>
             <Label
                 Text="{Binding RightText2}"
                 TextColor="{Binding RightText2Color}"
                 FontSize="{Binding RightText2Size}"
                 HorizontalOptions="Start" VerticalOptions="End"
-                Margin="5,0,0,5"/>
+                Margin="5,0,0,5">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding RightTapCommand}"
+                        CommandParameter="{Binding CurrentContent, Source={x:Reference ThisView}}"/>
+                </Label.GestureRecognizers>
+            </Label>
         </StackLayout>
     </Grid>
 

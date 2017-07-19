@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prism.Commands;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -30,5 +31,11 @@ namespace XFUC.ViewModels
         public string RightText2 { get; set; }
         public Color RightText2Color { get; set; }
         public double RightText2Size { get; set; }
+
+
+        public DelegateCommand<object> TopTapCommand { get; set; }
+        public DelegateCommand<object> LeftTapCommand { get; set; }
+        public DelegateCommand<object> RightTapCommand { get; set; }
+
     }
 }

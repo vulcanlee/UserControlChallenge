@@ -49,6 +49,41 @@ namespace XFUC.UserControls
 
         #endregion
 
+        #region ButtonContent 可綁定屬性 BindableProperty
+        //這個可綁定屬性，用於儲存在 XAML 所綁定的當時物件
+        public static readonly BindableProperty ButtonContentProperty =
+            BindableProperty.Create("ButtonContent", // 屬性名稱 
+                typeof(object), // 回傳類型 
+                typeof(MyButton), // 宣告類型 
+                null, // 預設值 
+                propertyChanged: OnButtonContentChanged  // 屬性值異動時，要執行的事件委派方法
+            );
+
+        public object ButtonContent
+        {
+            set
+            {
+                SetValue(ButtonContentProperty, value);
+            }
+            get
+            {
+                return (object)GetValue(ButtonContentProperty);
+            }
+        }
+
+        private static void OnButtonContentChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var fooEle = bindable as MyButtonProp;
+            if(fooEle!=null)
+            {
+                fooEle.CurrentContent = newValue;
+            }
+        }
+
+        #endregion
+
+        public object CurrentContent { get; set; }
+
         public MyButtonProp()
         {
             InitializeComponent();
