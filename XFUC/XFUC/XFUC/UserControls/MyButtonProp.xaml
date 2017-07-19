@@ -18,7 +18,7 @@
 
         <BoxView
             x:Name="ButtonBackgroundBoxView"
-            Color="White"
+            Color="{Binding ButtonColor}"
             Grid.RowSpan="2"
             Grid.ColumnSpan="2"/>
 

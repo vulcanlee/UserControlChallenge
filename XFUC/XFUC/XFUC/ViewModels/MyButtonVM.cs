@@ -15,7 +15,7 @@ namespace XFUC.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         // 該按鈕的背景顏色
-        public Color ButtonColor { get; set; }
+        public Color ButtonColor { get; set; } = Color.Yellow;
 
         // 第1Row 的最上方文字
         public string TopText { get; set; }
