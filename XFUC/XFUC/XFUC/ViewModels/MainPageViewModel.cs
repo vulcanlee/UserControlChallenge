@@ -25,7 +25,7 @@ namespace XFUC.ViewModels
         public MainPageViewModel()
         {
             #region 進行最下方的兩個按鈕VM資料初始化
-            LeftButtonVM.ButtonColor = Color.FromHex("90db94");
+            //LeftButtonVM.ButtonColor = Color.FromHex("90db94");
             LeftButtonVM.TopText = "按鈕上方文字";
             LeftButtonVM.LeftText = "左下方文字";
             LeftButtonVM.LeftTextColor = Color.Red;
@@ -36,7 +36,7 @@ namespace XFUC.ViewModels
             LeftButtonVM.RightText2Color = Color.Blue;
             LeftButtonVM.RightText2Size = 10;
 
-            RightButtonVM.ButtonColor = Color.FromHex("cc8695");
+            //RightButtonVM.ButtonColor = Color.FromHex("cc8695");
             RightButtonVM.TopText = "R按鈕上方文字";
             RightButtonVM.LeftText = "R左下方文字";
             RightButtonVM.LeftTextColor = Color.Red;

@@ -21,12 +21,14 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <userControls:MyButton
+        <userControls:MyButtonProp
             Grid.Column="0" Grid.Row="1"
+            ButtonBackgroundColor="#90db94"
             HorizontalOptions="Fill" VerticalOptions="Fill"
             BindingContext="{Binding LeftButtonVM}"/>
-        <userControls:MyButton
+        <userControls:MyButtonProp
             Grid.Column="1" Grid.Row="1"
+            ButtonBackgroundColor="#cc8695"
             HorizontalOptions="Fill" VerticalOptions="Fill"
             BindingContext="{Binding RightButtonVM}"/>
     </Grid>
