@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             
+             xmlns:userControls="clr-namespace:XFUC.UserControls"
+             
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFUC.Views.MainPage"
+             Title="MainPage">
+    <Grid
+        RowSpacing="0" ColumnSpacing="0"
+        Margin="10,20"
+        >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <userControls:MyButton
+            Grid.Column="0" Grid.Row="1"
+            HorizontalOptions="Fill" VerticalOptions="Fill"
+            BindingContext="{Binding LeftButtonVM}"/>
+        <userControls:MyButton
+            Grid.Column="1" Grid.Row="1"
+            HorizontalOptions="Fill" VerticalOptions="Fill"
+            BindingContext="{Binding RightButtonVM}"/>
+    </Grid>
+</ContentPage>
